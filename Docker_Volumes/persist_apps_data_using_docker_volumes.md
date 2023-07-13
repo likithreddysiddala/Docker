@@ -7,7 +7,7 @@ Managing data is necessary for the stateful applications even though container d
 
 1. Create a jenkins container 
    ```sh 
-   docker run --name vtjenkinsprd01 -p 8080:8080 -p 50000:50000 -v vtjenkinsprd01_jenkins_home_vol:/var/jenkins_home jenkins
+   docker run --name vtjenkinsprd01 -p 8080:8080 -p 50000:50000 -v vtjenkinsprd01_jenkins_home_vol:/var/jenkins_home jenkins:2.60.3
    ```
 1. Create a test job on jenkins console 
 
@@ -24,7 +24,7 @@ Managing data is necessary for the stateful applications even though container d
 
 1. Create a new container with existing volume. 
    ```sh
-   docker run -d --name vtjenkinsprd02 -p 8090:8080 -p 55000:50000 -v vtjenkinsprd01_jenkins_home_vol:/var/jenkins_home jenkins
+   docker run -d --name vtjenkinsprd02 -p 8090:8080 -p 55000:50000 -v vtjenkinsprd01_jenkins_home_vol:/var/jenkins_home jenkins:2.60.3
    ```
 
 ## Using host volumes
@@ -36,7 +36,7 @@ Managing data is necessary for the stateful applications even though container d
    ```
 1. Create jenkins server using above directory
    ```sh 
-   docker run --name vtjenkinsprd01 -p 9000:8080 -p 60000:50000 -v /opt/jenkins:/var/jenkins_home jenkins
+   docker run --name vtjenkinsprd01 -p 9000:8080 -p 60000:50000 -v /opt/jenkins:/var/jenkins_home jenkins:2.60.3
    ```
 
 1. Check for the jenkins data under /opt/jenkins
